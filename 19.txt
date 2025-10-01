@@ -1,0 +1,22 @@
+prw-rw-r-- 1 sunil sunil 0 Oct  1 20:55 myfifo1
+
+
+sunil@sunil-VivoBook-ASUSLaptop-K3502ZA-K3502ZA:~/Desktop/ss_lab2$ mkfifo myfifo2
+
+
+sunil@sunil-VivoBook-ASUSLaptop-K3502ZA-K3502ZA:~/Desktop/ss_lab2$ ls -l myfifo2
+prw-rw-r-- 1 sunil sunil 0 Oct  1 20:55 myfifo2
+
+
+sunil@sunil-VivoBook-ASUSLaptop-K3502ZA-K3502ZA:~/Desktop/ss_lab2$ strace mkfifo myfifo3 
+execve("/usr/bin/mkfifo", ["mkfifo", "myfifo3"], 0x7ffca7da4148 /* 49 vars */) = 0
+brk(NULL)                               = 0x5a7d33906000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7021fa998000
+
+
+
+
+sunil@sunil-VivoBook-ASUSLaptop-K3502ZA-K3502ZA:~/Desktop/ss_lab2$ strace mknod myfifo 4 p
+execve("/usr/bin/mknod", ["mknod", "myfifo", "4", "p"], 0x7fffd3939498 /* 49 vars */) = 0
+brk(NULL)                               = 0x6501d9718000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x75a42be6a000
