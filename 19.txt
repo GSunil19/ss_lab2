@@ -1,3 +1,5 @@
+sunil@sunil-VivoBook-ASUSLaptop-K3502ZA-K3502ZA:~/Desktop/ss_lab2$ mknod myfifo p
+
 prw-rw-r-- 1 sunil sunil 0 Oct  1 20:55 myfifo1
 
 
