@@ -19,7 +19,6 @@ int main() {
     if (fork() == 0) {
         // Child 1: ls -l
         close(fd[0]); // close read end
-        dup(1);      // duplicate stdout (will actually replace later)
         close(1);
         dup(fd[1]);  // redirect stdout to pipe write end
         execlp("ls", "ls", "-l", NULL);
@@ -30,7 +29,6 @@ int main() {
     if (fork() == 0) {
         // Child 2: wc
         close(fd[1]); // close write end
-        dup(0);       // duplicate stdin
         close(0);
         dup(fd[0]);   // redirect stdin to pipe read end
         execlp("wc", "wc", NULL);
